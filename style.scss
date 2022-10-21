@@ -1,0 +1,509 @@
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerRegular.woff2') format('woff2'), url('../fonts/MullerRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerBlack.woff2') format('woff2'), url('../fonts/MullerBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerBold.woff2') format('woff2'), url('../fonts/MullerBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerExtraBold.woff2') format('woff2'), url('../fonts/MullerExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+body {
+  overflow-x: hidden;
+}
+html {
+  font-size: 16px;
+  font-family: 'Muller';
+  color: #b99150;
+  line-height: 1.2;
+}
+p {
+  line-height: 1.07;
+}
+h1 {
+  font-size: 45px;
+  font-weight: 800;
+}
+h2 {
+  font-size: 35px;
+  color: #bd975c;
+  font-weight: bold;
+}
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.orange {
+  color: #ffaf18;
+}
+.button {
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 700;
+  color: #382400;
+  background-color: #ffaf18;
+  padding: 21px 53px;
+  cursor: pointer;
+  &:hover {
+    background: #ffbc3f;
+    color: #613f00;
+  }
+  &:focus {
+    box-shadow: 0px 3px 13px 1px #ffaf18;
+    outline: none ;
+  }
+  &:active {
+    background-color: #ff9d00;
+    color: #1b1200;
+  }
+}   
+.d-n{
+  display: none;
+}
+
+/* ---------------------------------------------- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: content-box;
+}
+.header {
+  box-shadow: 0px 3px 13px 1px rgba(152, 152, 152, 0.2);
+  margin-bottom: 127px;
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.logo {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  font-size: 24px;
+  font-family: 'Muller';
+  font-weight: 900;
+  color: #ffc468;
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+  margin-right: 225px;
+  &:hover{
+    color: #ffda9e;
+  }
+  &:active{
+    color: #ff9d00;
+  }
+  &::before {
+    content: '';
+    background: url('../images/logo.png') no-repeat;
+    height: 69px;
+    width: 69px;
+    margin-right: 10px;
+  }
+}
+.nav {
+  &__list {
+    display: flex;
+  }
+  &__link {
+    display: block;
+    &:hover {
+      color: #5e4927;
+    }
+    padding: 0 24px;
+  }
+  &__menu-icon {
+    display: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    path {
+      fill: #ffc468;
+    }
+    &:hover path {
+      fill: #ffda9e;
+    }
+    &:active path {
+      fill: #ff9d00;
+    }
+  }
+}
+
+/* ---------------------------------------------- */
+
+.advantages {
+  display: flex;
+  align-items: center;
+  margin-bottom: 155px;
+  &__slogan {
+    margin-bottom: 43px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 50% 45%;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  &__item {
+    position: relative;
+    margin-left: 80px;
+    margin-bottom: 38px;
+    &--place::before,
+    &--chef::before,
+    &--quality::before,
+    &--recipe::before {
+      content: '';
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      left: -75px;
+    }
+    &--place::before {
+      background: url('../images/place.png') no-repeat;
+    }
+    &--chef::before {
+      background: url('../images/chef.png') no-repeat;
+    }
+    &--quality::before {
+      background: url('../images/quality.png') no-repeat;
+    }
+    &--recipe::before {
+      background: url('../images/recipe.png') no-repeat;
+    }
+  }
+  &__title {
+    font-size: 16px;
+    color: #ffaf18;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+/* ---------------------------------------------- */
+
+.goods {
+  text-align: center;
+  color: #181a1a;
+  margin-bottom: 235px;
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+}
+.card {
+  padding: 18px;
+  box-shadow: 0px 3px 13px 1px rgba(152, 152, 152, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-end;
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 1.2;
+    flex-grow: 1;
+    margin-bottom: 15px;
+  }
+  &__image {
+    width: 210px;
+    height: 145px;
+    object-fit: scale-down;
+    margin-bottom: 25px;
+  }
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    align-self: flex-end;
+  }
+}
+
+/* ---------------------------------------------- */
+
+.footer {
+  display: flex;
+  position: relative;
+  margin-bottom: 60px;
+  &__promo {
+    margin-right: 110px;
+  }
+  &__form {
+    align-self: flex-end;
+  }
+  &__image {
+    width: 410px;
+    height: 454px;
+    position: absolute;
+    right: -130px;
+    bottom: -35px;
+    z-index: -1;
+  }
+}
+.promo {
+  width: 400px;
+  &__title {
+    margin-bottom: 65px;
+  }
+  &__description {
+    padding-left: 5px;
+    line-height: 1.5;
+  }
+}
+.form {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  input {
+    font-size: inherit;
+    color: #cba86e;
+    padding: 20px;
+    border: 1px solid #b99150;
+    margin-bottom: 25px;
+    &::placeholder {
+      color: #cba86e;
+    }
+  }
+  &__button {
+    width: 100%;
+    padding: 20px 0;
+  }
+}
+
+/* ---------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(1.5px);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -75px;
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title{
+    color: #ffaf18;
+    margin-bottom: 10px;
+  }
+  &__button{
+    width: 200px;
+    padding: 10px 20px;
+  }
+  &__text{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------------------------------------------- */
+
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+  .logo {
+    margin-right: 150px;
+  }
+  .advantages {
+    &__list {
+      max-width: 800px;
+    }
+    &__pizza-image {
+      position: absolute;
+      right: -300px;
+    }
+  }
+  .goods {
+    margin-bottom: 150px;
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* ---------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+  .header {
+    margin-bottom: 50px;
+  }
+  .logo {
+    margin-right: 50px;
+  }
+  .nav {
+    &__link {
+      padding: 0 10px;
+    }
+  }
+  .advantages {
+    margin-bottom: 80px;
+    position: relative;
+    display: block;
+    &__slogan {
+      text-align: center;
+    }
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__pizza-image {
+      right: -500px;
+      bottom: 50px;
+    }
+    &__button {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  .goods {
+    margin-bottom: 50px;
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .footer {
+    &__image {
+      display: none;
+    }
+    &__promo {
+      margin-right: 30px;
+    }
+    &__form {
+      align-self: center;
+    }
+  }
+  .promo {
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* ---------------------------------------------- */
+
+@media (max-width: 767.98px) {
+  .d-n-for-menu{
+    display: none;
+  }
+  .container {
+    max-width: 540px;
+  }
+  .header__container {
+    justify-content: space-between;
+  }
+  .logo {
+    margin-right: 10px;
+  }
+  .nav {
+    &__list {
+      text-align: center;
+      background-color: #fff;
+      z-index: 1;
+      position: absolute;
+      flex-direction: column;
+      right: 0;
+      left: 0;
+      top: 98px;
+      box-shadow: 0px 20px 13px -13px rgba(152, 152, 152, 0.2);
+    }
+    &__link {
+      padding: 20px 60px;
+      &:hover {
+        background-color: #ffaf18;
+      }
+      &:active{
+        background-color: #ff9d00;
+        color: #1b1200;
+      }
+    }
+    &__menu-icon {
+      display: block;
+    }
+  }
+  .header {
+    margin-bottom: 30px;
+  }
+  .advantages {
+    margin-bottom: 30px;
+    &__pizza-image {
+      display: none;
+    }
+  }
+  .goods {
+    margin-bottom: 30px;
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .footer {
+    flex-direction: column;
+
+    &__promo {
+      align-self: center;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
